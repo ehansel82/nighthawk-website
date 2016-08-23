@@ -8,23 +8,22 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="bootstrap_themes/bootstrap-slate.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles/site.css"/>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
     <script src="app/app.js"></script>
-    <script src="app/navCtrl.js"></script>
 </head>
 
 <body ng-app="nighthawkApp">
-    <h1>Nighthawk Acoutic Duo</h1>
+    <h1 id="mainHeader">Nighthawk Acoutic Duo</h1>
     <nav class="navbar navbar-default" ng-controller="navCtrl">
-    <div class="container">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Schedule</a></li>
-            <li><a href="#">About</a></li>
+            <li ng-click="setHomeActive()" ng-class="{active: isHomeActive}"><a href="#/">Home</a></li>
+            <li ng-click="setScheduleActive()" ng-class="{active: isScheduleActive}"><a href="#schedule">Schedule</a></li>
+            <li ng-click="setAboutActive()" ng-class="{active: isAboutActive}"><a href="#about">About</a></li>
         </ul>
-    </div>
     </nav>
     <div ng-view></div>
 </body>

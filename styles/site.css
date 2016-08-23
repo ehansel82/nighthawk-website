@@ -1,0 +1,25 @@
+#mainDiv{
+    background-image: url("../images/stock-mic.jpg"); 
+    width: 100vw;
+    height: 100vh; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+} 
+
+nav.navbar {
+    margin-bottom: 0;
+}
+
+div.viewContainer{
+    padding: 10px;
+}
+
+h1 {
+    padding-left: 10px;
+}
+
+h2 {
+    color: yellow;
+}
