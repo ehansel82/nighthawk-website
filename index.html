@@ -9,15 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="bootstrap_themes/bootstrap-slate.min.css" />
     <link rel="stylesheet" type="text/css" href="styles/site.css"/>
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/angular.min.js"></script>
+    <script src="dist/bootstrap.min.js"></script>
+    <script src="dist/angular-route.min.js"></script>
     <script src="app/app.js"></script>
 </head>
 
 <body ng-app="nighthawkApp">
-    <h1 id="mainHeader">Nighthawk Acoutic Duo</h1>
+    <header>
+        <h1 id="mainHeader">Nighthawk Acoutic Duo</h1>
+    </header>
     <nav class="navbar navbar-default" ng-controller="navCtrl">
         <ul class="nav navbar-nav">
             <li ng-click="setHomeActive()" ng-class="{active: isHomeActive}"><a href="#/">Home</a></li>

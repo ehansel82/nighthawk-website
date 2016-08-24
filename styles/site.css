@@ -1,12 +1,25 @@
+
+
 #mainDiv{
     background-image: url("../images/stock-mic.jpg"); 
     width: 100vw;
-    height: 100vh; 
+    min-height: calc(100vh - 122px);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 } 
+
+.scheduleContainer
+{
+    background-image: url("../images/mic-bg.jpg"); 
+    width: 100vw;
+    min-height: calc(100vh - 122px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
 
 nav.navbar {
     margin-bottom: 0;
@@ -23,3 +36,14 @@ h1 {
 h2 {
     color: yellow;
 }
+
+.panel-heading h4 {
+    font-weight: bold;
+    color: white;
+}
+
+.comment {
+    font-style: italic;
+    color: yellow;
+}
+
