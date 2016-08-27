@@ -1,9 +1,9 @@
 
 
-body{
+#mainDiv {
     background-image: url("../images/stock-mic.jpg"); 
     width: 100vw;
-    height: calc(100vh - 98px);
+    height: 92.2vh;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,7 +14,7 @@ body{
 {
     background-image: url("../images/mic-bg.jpg"); 
     width: 100vw;
-    height: calc(100vh - 98px);
+    height: 92.2vh;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -65,3 +65,8 @@ h2 {
     color: white;
 }
 
+@media (max-width: 600px) {
+    body, .scheduleContainer{
+        height: 100vh
+    }
+}
