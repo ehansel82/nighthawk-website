@@ -3,23 +3,23 @@
 body{
     background-image: url("../images/stock-mic.jpg"); 
     width: 100vw;
-    height: calc(100vh - 47px);
+    height: calc(100vh - 98px);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 } 
 
-/*.scheduleContainer
+.scheduleContainer
 {
     background-image: url("../images/mic-bg.jpg"); 
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 98px);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-}*/
+}
 
 nav.navbar {
     margin-bottom: 0;
@@ -50,5 +50,18 @@ h2 {
 .angularView
 {
  margin-top: 45px;
+}
+
+.panel{
+    opacity: .95;
+}
+.panel-border{
+    border-style: solid;
+    border-color: white;
+    color: white;
+    padding: 10px;
+}
+.panel-body{
+    color: white;
 }
 
