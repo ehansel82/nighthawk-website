@@ -3,7 +3,7 @@
 #mainDiv {
     background-image: url("../images/stock-mic.jpg"); 
     width: 100vw;
-    height: 92.2vh;
+    min-height: 92.2vh;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,7 +14,7 @@
 {
     background-image: url("../images/mic-bg.jpg"); 
     width: 100vw;
-    height: 92.2vh;
+    min-height: 92.2vh;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -63,10 +63,4 @@ h2 {
 }
 .panel-body{
     color: white;
-}
-
-@media (max-width: 600px) {
-    body, .scheduleContainer{
-        height: 100vh
-    }
 }
