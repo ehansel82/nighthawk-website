@@ -52,7 +52,7 @@ app.controller('navCtrl', ['$scope', function($scope) {
 }]);
 
 app.controller('songCtrl', ['$scope', '$http', function($scope, $http) {
-      $http.get("data/demos.json")
+      $http.get("resources/demos.json")
         .then(function(response) {
             $scope.songs = response.data;
         });
