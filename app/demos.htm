@@ -1,0 +1,18 @@
+<div class="viewContainer" >
+
+    <h2>Demos</h2>
+
+    <div ng-repeat="song in songs">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title"><span class="glyphicon glyphicon-music"></span> {{song.title}}</h4>
+            </div>
+            <div class="panel-body">
+                <audio controls>
+                    <source ng-src="{{song.filePath}}" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                </audio>
+            </div>
+        </div>
+    </div>
+</div>

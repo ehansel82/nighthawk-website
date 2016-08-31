@@ -11,12 +11,17 @@ app.config(function($routeProvider) {
     .when("/about", {
         templateUrl : "app/about.htm"
     })
+    .when("/demos", {
+        templateUrl : "app/demos.htm",
+        controller : "songCtrl"
+    })
 });
 
 app.controller('navCtrl', ['$scope', function($scope) {
     $scope.isAboutActive = false;
     $scope.isScheduleActive = false;
     $scope.isHomeActive = false;
+    $scope.isDemosActive = false;
 
     $scope.setScheduleActive = function(){
       $scope.clearAllActive();
@@ -33,9 +38,22 @@ app.controller('navCtrl', ['$scope', function($scope) {
       $scope.isHomeActive = true;
     };
 
+    $scope.setDemosActive = function(){
+      $scope.clearAllActive();
+      $scope.isDemosActive = true;
+    };
+
     $scope.clearAllActive = function(){
       $scope.isAboutActive = false;
       $scope.isScheduleActive = false;
       $scope.isHomeActive = false;
+      $scope.isDemosActive = false;
     };
+}]);
+
+app.controller('songCtrl', ['$scope', '$http', function($scope, $http) {
+      $http.get("data/demos.json")
+        .then(function(response) {
+            $scope.songs = response.data;
+        });
 }]);
