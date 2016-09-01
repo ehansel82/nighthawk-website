@@ -4,10 +4,10 @@
 
     <div ng-repeat="song in songs">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title"><span class="glyphicon glyphicon-music"></span> {{song.title}}</h4>
+            <div class="panel-heading" data-toggle="collapse" data-target="#collapsable-{{$index}}">
+                <h4 class="panel-title"><span class="glyphicon glyphicon-music"></span> {{song.title}} <i class="fa fa-plus-square" aria-hidden="true"></i></h4>
             </div>
-            <div class="panel-body">
+            <div id="collapsable-{{$index}}" class="panel-body collapse">
                 <audio controls>
                     <source ng-src="{{song.filePath}}" type="audio/mpeg">
                     Your browser does not support the audio tag.
@@ -16,3 +16,9 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('.panel-body').on('show.bs.collapse', function () {
+        $('.panel-body').not(this).collapse('hide');
+    });
+</script>
