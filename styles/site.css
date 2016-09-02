@@ -52,8 +52,8 @@ h2 {
  margin-top: 45px;
 }
 
-.panel{
-    opacity: .95;
+.panel, well{
+    opacity: .90;
 }
 .panel-border{
     border-style: solid;
@@ -63,4 +63,12 @@ h2 {
 }
 .panel-body{
     color: white;
+}
+
+.bold{
+    font-weight: bold;
+}
+.center-text {
+    text-align: center;
+    text-align: center;
 }
