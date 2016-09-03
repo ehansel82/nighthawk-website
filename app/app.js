@@ -6,7 +6,8 @@ app.config(function($routeProvider) {
         templateUrl : "app/home.htm"
     })
     .when("/schedule", {
-        templateUrl : "app/schedule.htm"
+        templateUrl : "app/schedule.htm",
+        controller: "scheduleCtrl"
     })
     .when("/about", {
         templateUrl : "app/about.htm"
@@ -52,8 +53,39 @@ app.controller('navCtrl', ['$scope', function($scope) {
 }]);
 
 app.controller('songCtrl', ['$scope', '$http', function($scope, $http) {
-      $http.get("data/demos.json")
-        .then(function(response) {
-            $scope.songs = response.data;
-        });
+    $http.get("data/demos.json")
+    .then(function(response) {
+        $scope.songs = response.data;
+    });
+}]);
+
+app.controller('scheduleCtrl', ['$scope', '$http', function($scope, $http) {
+    $http.get("data/schedule.json")
+    .then(function(response) {
+        $scope.shows = response.data;
+        $scope.shows = $scope.shows.filter(schedFilter);
+        $scope.shows.sort(schedCompare);
+    });
+
+    var schedFilter = function(show){
+        var twoDaysAgo = new moment().subtract(2, 'days');
+        var schedDate = moment(show.date, "MM/DD/YYYY");
+        if(schedDate > twoDaysAgo){
+            return true;
+        }
+    }
+
+    var schedCompare = function(a, b){
+        var aDate = moment(a.date, "MM/DD/YYYY");
+        var bDate = moment(b.date, "MM/DD/YYYY");
+
+        if(a.date < b.date){
+            return -1;
+        }else if(a.date > b.date){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+    
 }]);

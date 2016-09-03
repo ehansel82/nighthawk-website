@@ -52,7 +52,7 @@ h2 {
  margin-top: 45px;
 }
 
-.panel, well{
+.panel, .well{
     opacity: .90;
 }
 .panel-border{
