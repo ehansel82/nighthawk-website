@@ -72,3 +72,8 @@ h2 {
     text-align: center;
     text-align: center;
 }
+
+.red-border{
+    border-color: red;
+    border-style: solid;
+}

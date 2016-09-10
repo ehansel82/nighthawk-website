@@ -2,16 +2,16 @@
 
     <h2>Demos</h2>
 
-    <div ng-repeat="song in songs">
+    <div ng-repeat="demo in demos">
         <div class="row">
             <div class="col-sm-6 col-md-5 col-lg-4">
                 <div class="panel panel-default">
                     <div class="panel-heading" data-toggle="collapse" data-target="#collapsable-{{$index}}">
-                        <h4 class="panel-title"><span class="glyphicon glyphicon-music"></span> {{song.title}} <i class="fa fa-plus-square" style="float: right;" aria-hidden="true"></i></h4>
+                        <h4 class="panel-title"><span class="glyphicon glyphicon-music"></span> {{demo.title}} <i class="fa fa-plus-square pull-right" aria-hidden="true"></i></h4>
                     </div>
                     <div id="collapsable-{{$index}}" class="panel-body collapse demo-panel">
-                        <audio controls>
-                            <source ng-src="{{song.filePath}}" type="audio/mpeg"> Your browser does not support the audio tag.
+                        <audio controls preload="metadata">
+                            <source ng-src="{{demo.filePath}}" type="audio/mpeg"> Your browser does not support the audio tag.
                         </audio>
                     </div>
                 </div>

@@ -14,15 +14,17 @@ app.config(function($routeProvider) {
     })
     .when("/demos", {
         templateUrl : "app/demos.htm",
+        controller : "demoCtrl"
+    })
+    .when("/songs", {
+        templateUrl : "app/songs.htm",
         controller : "songCtrl"
     })
 });
 
 app.controller('navCtrl', ['$scope', function($scope) {
-    $scope.isAboutActive = false;
-    $scope.isScheduleActive = false;
-    $scope.isHomeActive = false;
-    $scope.isDemosActive = false;
+    $scope.clearAllActive();
+    $scope.setHomeActive();
 
     $scope.setScheduleActive = function(){
       $scope.clearAllActive();
@@ -44,19 +46,40 @@ app.controller('navCtrl', ['$scope', function($scope) {
       $scope.isDemosActive = true;
     };
 
+    $scope.setSongsActive = function(){
+      $scope.clearAllActive();
+      $scope.isSongsActive = true;
+    };
+
     $scope.clearAllActive = function(){
       $scope.isAboutActive = false;
       $scope.isScheduleActive = false;
       $scope.isHomeActive = false;
       $scope.isDemosActive = false;
+      $scope.isSongsActive = false;
     };
 }]);
 
-app.controller('songCtrl', ['$scope', '$http', function($scope, $http) {
+app.controller('demoCtrl', ['$scope', '$http', function($scope, $http) {
     $http.get("data/demos.json")
     .then(function(response) {
-        $scope.songs = response.data;
+        $scope.demos = response.data;
     });
+}]);
+
+app.controller('songCtrl', ['$scope', '$http', function($scope, $http) {
+    $http.get("data/songs.json")
+    .then(function(response) {
+        $scope.songs = response.data;
+        $scope.covers = getSongType('cover');
+        $scope.originals = getSongType('original');
+    });
+
+    function getSongType(type) {
+        return $scope.songs.filter(function(song){
+            return (song.type === type);
+        })
+    }
 }]);
 
 app.controller('scheduleCtrl', ['$scope', '$http', function($scope, $http) {
