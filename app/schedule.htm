@@ -1,16 +1,16 @@
 <div class="scheduleContainer viewContainer">
-  <h2>Upcoming Schedule</h2>
+  <h2 class="yellow-text center-medium">Upcoming Schedule</h2>
 
   <div ng-repeat="show in shows" <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-8 col-md-offset-2 col-lg-4 col-lg-offset-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h4>{{show.date}} - {{show.venue}}</h4>
+          <h4><span class="yellow-text">{{show.date}}</span> - <span>{{show.venue}}</span></h4>
         </div>
         <div class="panel-body">
           <div>{{show.address}}</div>
           <div>{{show.startTime}} to {{show.endTime}}</div>
-          <div class="comment">{{show.comment}}</div>
+          <div class="comment lightblue-text">{{show.comment}}</div>
         </div>
       </div>
     </div>

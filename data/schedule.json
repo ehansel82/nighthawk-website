@@ -8,7 +8,7 @@
         "comment": "This place is cool"
     },
     {
-        "date": "9/2/2016",
+        "date": "11/2/2016",
         "venue": "Cafe Supreme",
         "address": "Main Street, Irwin",
         "startTime": "10:00PM",
@@ -17,7 +17,7 @@
     },
     {
         "date": "6/4/2018",
-        "venue": "Cafe Supreme 2",
+        "venue": "Rodney's",
         "address": "Main Street, Irwin",
         "startTime": "10:00PM",
         "endTime": "2:00AM",
