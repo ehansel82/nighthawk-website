@@ -1,9 +1,8 @@
 
 
 #mainDiv {
-    background-image: url("../images/stock-mic.jpg"); 
-    width: 100vw;
-    min-height: 92.2vh;
+    background-image: url("../images/stock-mic2.jpg"); 
+    min-height: 92.9vh;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,8 +12,7 @@
 .scheduleContainer
 {
     background-image: url("../images/mic-bg.jpg"); 
-    width: 100vw;
-    min-height: 92.2vh;
+    min-height: 92.9vh;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,10 +29,6 @@ div.viewContainer{
 
 h1 {
     padding-left: 10px;
-}
-
-h2 {
-    color: yellow;
 }
 
 .panel-heading h4 {
@@ -73,7 +67,25 @@ h2 {
     text-align: center;
 }
 
-.red-border{
-    border-color: red;
-    border-style: solid;
+.red-text{
+    color: #ff3333;
+}
+
+.darkyellow-text {
+    color:#ffdb4d;
+}
+
+.yellow-text{
+    color: #ffff00;
+}
+
+.lightblue-text{
+    color: #00ccff
+}
+a:hover{
+  color: #00ccff;  
+}
+
+#contactPanel{
+    text-align: center;
 }
