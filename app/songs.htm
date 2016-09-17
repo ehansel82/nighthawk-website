@@ -1,47 +1,6 @@
 <section class="viewContainer">
 
-    <h2 class="yellow-text">Covers</h2>
-    <div class="row">
-        <div class="col-sm-8 col-md-6 col-lg-5">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr class="lightblue-text">
-                            <th>Title</th>
-                            <th>Artist</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="cover in covers">
-                            <td>{{cover.title}}</td>
-                            <td>{{cover.artist}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <h2 class="yellow-text">Originals</h2>
-    <div class="row">
-        <div class="col-sm-8 col-md-6 col-lg-5">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr class="lightblue-text">
-                            <th>Title</th>
-                            <th>Artist</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="original in originals">
-                            <td>{{original.title}}</td>
-                            <td>{{original.artist}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+    <song-list type="cover"></song-list>
+    <song-list type="original"></song-list>
 
 </section>

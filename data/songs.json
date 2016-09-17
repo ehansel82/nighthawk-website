@@ -1,5 +1,19 @@
 [
-    {"title": "Desparado", "artist": "Eagles", "type":"cover"},
-    {"title": "Black Magic Woman", "artist": "Santana", "type":"cover"},
-    {"title": "Dog Named Boo", "artist": "Bob Hansel", "type":"original"}
+    {
+        "title": "Desparado",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "Black Magic Woman",
+        "artist": "Santana",
+        "type": "cover",
+        "demoPath": "music/Black Magic Woman.mp3"
+    },
+    {
+        "title": "Dog Named Boo",
+        "artist": "Bob Hansel",
+        "type": "original",
+        "demoPath": "music/Dog Name Boo.mp3"
+    }
 ]

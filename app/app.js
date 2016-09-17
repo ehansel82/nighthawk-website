@@ -20,11 +20,29 @@ app.config(function ($routeProvider) {
             controller: "demoCtrl"
         })
         .when("/songs", {
-            templateUrl: "app/songs.htm",
-            controller: "songCtrl"
+            templateUrl: "app/songs.htm"
         })
 
 });
+
+app.factory('songFactory', ['$http', function ($http) {
+
+    var songFactory = {};
+
+    songFactory.getAllSongs = function () {
+        return $http.get("data/songs.json");
+    };
+
+    songFactory.filterByType = function (songs, type) {
+        return songs.filter(function (song) {
+            return (song.type === type);
+        })
+    };
+
+    return songFactory;
+
+}]);
+
 
 app.factory('scheduleFactory', ['$http', function ($http) {
 
@@ -147,23 +165,6 @@ app.controller('aboutCtrl', ['$scope', function ($scope) {
 
 }]);
 
-app.controller('songCtrl', ['$scope', '$http', function ($scope, $http) {
-
-    $http.get("data/songs.json")
-        .then(function (response) {
-            $scope.songs = response.data;
-            $scope.covers = getSongType('cover');
-            $scope.originals = getSongType('original');
-        });
-
-    function getSongType(type) {
-        return $scope.songs.filter(function (song) {
-            return (song.type === type);
-        })
-    }
-
-}]);
-
 app.controller('scheduleCtrl', ['$scope', 'scheduleFactory', function ($scope, scheduleFactory) {
 
     scheduleFactory.getAllShows()
@@ -180,4 +181,27 @@ app.controller('homeCtrl', ['$scope', 'scheduleFactory', function ($scope, sched
             $scope.shows = scheduleFactory.filterUpcoming(response.data);
         });
 
+}]);
+
+app.directive('songList', ['songFactory', function (songFactory) {
+    return {
+        restrict: 'EA',
+        scope: {
+            type: '@'
+        },
+        templateUrl: 'app/songListDirective.htm',
+        link: function ($scope, element, attrs) {
+
+            if ($scope.type === 'cover') {
+                $scope.title = 'Covers';
+            } else {
+                $scope.title = 'Originals';
+            }
+
+            songFactory.getAllSongs()
+                .then(function (response) {
+                    $scope.songs = songFactory.filterByType(response.data, $scope.type);
+                });
+        }
+    }
 }]);
