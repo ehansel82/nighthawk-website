@@ -13,7 +13,8 @@
         "address": "Main Street, Irwin",
         "startTime": "10:00PM",
         "endTime": "2:00AM",
-        "comment": "This place is cooler"
+        "comment": "This place is cooler",
+        "googleAddress": ""
     },
     {
         "date": "6/4/2018",
@@ -21,6 +22,7 @@
         "address": "Main Street, Irwin",
         "startTime": "10:00PM",
         "endTime": "2:00AM",
-        "comment": "This place is super duper awesome!"
+        "comment": "This place is super duper awesome!",
+        "googleAddress": "557 Wendel Rd, Irwin, PA 15642"
     }
 ]

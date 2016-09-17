@@ -1,101 +1,89 @@
-
-
 #mainDiv {
-    background-image: url("../images/stock-mic2.jpg"); 
-    min-height: 92.9vh;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-} 
-
-.scheduleContainer
-{
-    background-image: url("../images/mic-bg.jpg"); 
+    background-image: url("../images/stock-mic2.jpg");
     min-height: 92.9vh;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
-
+.scheduleContainer {
+    background-image: url("../images/mic-bg.jpg");
+    min-height: 92.9vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
 nav.navbar {
     margin-bottom: 0;
 }
-
-div.viewContainer{
+.viewContainer {
     padding: 10px;
 }
-
 h1 {
     padding-left: 10px;
 }
-
 .panel-heading h4 {
     font-weight: bold;
     color: white;
 }
-
 .comment {
     font-style: italic;
     color: yellow;
 }
-
-.angularView
-{
- margin-top: 45px;
+.angularView {
+    margin-top: 45px;
 }
-
-.panel, .well{
+.panel,
+.well {
     opacity: .90;
 }
-.panel-border{
+.panel-border {
     border-style: solid;
     border-color: white;
     color: white;
     padding: 10px;
 }
-.panel-body{
+.panel-body {
     color: white;
 }
-
-.bold{
+.bold {
     font-weight: bold;
 }
 .center-text {
     text-align: center;
     text-align: center;
 }
-
-.red-text{
+.red-text {
     color: #ff3333;
 }
-
 .darkyellow-text {
-    color:#ffdb4d;
+    color: #ffdb4d;
 }
-
-.yellow-text{
+.yellow-text {
     color: #ffff00;
 }
-
-.lightblue-text{
-    color: #00ccff
+a:hover {
+    color: white;
 }
-a:hover{
-  color: #00ccff;  
+.lightblue-text,
+.googleLink,
+.scheduleContainer a:visited
+ {
+    color: #5DADE2;
 }
-
-#contactPanel{
+#contactPanel {
     text-align: center;
 }
-
-section.about img{
+section.about img {
     margin-right: 30px;
 }
-
-@media (min-width: 992px){
-    .center-medium{
-        text-align:center;  
+.googleLink {
+    font-size: small;
+    text-decoration: underline;
+}
+@media (min-width: 992px) {
+    .center-medium {
+        text-align: center;
     }
 }

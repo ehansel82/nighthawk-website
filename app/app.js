@@ -1,6 +1,7 @@
 var app = angular.module("nighthawkApp", ["ngRoute"]);
 
 app.config(function ($routeProvider) {
+
     $routeProvider
         .when("/", {
             templateUrl: "app/home.htm"
@@ -10,7 +11,8 @@ app.config(function ($routeProvider) {
             controller: "scheduleCtrl"
         })
         .when("/about", {
-            templateUrl: "app/about.htm"
+            templateUrl: "app/about.htm",
+            controller: "aboutCtrl"
         })
         .when("/demos", {
             templateUrl: "app/demos.htm",
@@ -20,9 +22,11 @@ app.config(function ($routeProvider) {
             templateUrl: "app/songs.htm",
             controller: "songCtrl"
         })
+
 });
 
 app.controller('navCtrl', ['$scope', function ($scope) {
+
     $scope.clearAllActive();
     $scope.setHomeActive();
 
@@ -58,6 +62,7 @@ app.controller('navCtrl', ['$scope', function ($scope) {
         $scope.isDemosActive = false;
         $scope.isSongsActive = false;
     };
+
 }]);
 
 app.controller('demoCtrl', ['$scope', '$http', function ($scope, $http) {
@@ -75,7 +80,20 @@ app.controller('demoCtrl', ['$scope', '$http', function ($scope, $http) {
     }
 }]);
 
+app.controller('aboutCtrl', ['$scope', function ($scope) {
+
+    if($(window).width() <= 768){
+        $scope.isBobOpen = false;
+        $scope.isSteveOpen = false;
+    } else {
+        $scope.isBobOpen = true;
+        $scope.isSteveOpen = true;        
+    }
+
+}]);
+
 app.controller('songCtrl', ['$scope', '$http', function ($scope, $http) {
+
     $http.get("data/songs.json")
         .then(function (response) {
             $scope.songs = response.data;
@@ -88,9 +106,11 @@ app.controller('songCtrl', ['$scope', '$http', function ($scope, $http) {
             return (song.type === type);
         })
     }
+
 }]);
 
 app.controller('scheduleCtrl', ['$scope', '$http', function ($scope, $http) {
+
     $http.get("data/schedule.json")
         .then(function (response) {
             $scope.shows = response.data;

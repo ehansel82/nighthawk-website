@@ -1,64 +1,82 @@
-<section class="about">
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingOne">
-        <h4 class="panel-title">
-          <div role="button" data-toggle="collapse" data-parent="#accordion" href="" id="c1">
-            <img class="pull-left" src="images/bob1.jpg">
-            <h3>Bob Hansel</h3>
-            <div class="clearfix"></div>
-          </div>
-        </h4>
-      </div>
-      <div class="bobCollapse panel-collapse collapse" role="tabpanel">
-        <div class="panel-body">
-          <p>Bob resides in Ligonier, Pennsylvania. Songwriter musician, poet and humorist. Bob has been playing music professionally
-            for over 25 years, formerly as bassist and vocalist for Pittsburgh’s Back Up & Push plus The Bo Sloan Band, which
-            was voted the Number #1 Band in Pittsburgh in 1982, The Knobs (Irwin), Nighthawk (1) and Solo from 1998 to 2003.
-            Bob’s recording credits include bassist on the first album released by Back Up & Push, Bo Sloan’s “High Livin’”
-            album, and as a session artist for many other Pittsburgh based groups.</p>
-          <p>Bob released his first solo effort entitled “The Dream”, locally December 23rd, 1993. “Garrett County” CD Released
-            August 2003. Bob is currently recording his 3rd CD in his recording studio, soon to be released.
-            <p>
-              <p>Bob plays; acoustic guitar, bass guitar, mandolin, harmonica, lead and harmony vocals plus an avid songwriter.
-                Past bands I have had the pleasure of working with: Atlantis, Blue Spruce, Main Street, Back Up & Push, The
-                Bo Sloan Band, The Knobs, Nighthawk, and as soloist</p>
-        </div>
-      </div>
+<section class="about viewContainer">
+
+  <div class="row">
+    <div class="col-lg-10">
+      <h2 class="yellow-text">About</h2>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingOne">
-        <h4 class="panel-title">
-          <div role="button" data-toggle="collapse" data-parent="#accordion" href="" id="c2">
-            <img class="pull-left" src="images/steve1.jpg">
-            <h3>Steve Budesky</h3>
-            <div class="clearfix"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <div role="button" data-toggle="collapse" data-parent="#accordion" href="" id="c1" ng-click="isBobOpen = !isBobOpen">
+                <h3>Bob Hansel</h3>
+                <i class="glyphicon pull-right" ng-class="{'glyphicon-chevron-down': !isBobOpen,
+                                                           'glyphicon-chevron-up': isBobOpen}"></i>
+                <div style="margin-bottom: 8px;">Phone: <span class="lightblue-text">(724) 858-0288</span></div>
+                <div>Email: <span class="lightblue-text"> hanselbob@yahoo.com</span></div>
+                <div class="clearfix"></div>
+              </div>
+            </h4>
           </div>
-        </h4>
-      </div>
-      <div class="steveCollapse panel-collapse collapse" role="tabpanel">
-        <div class="panel-body">
-          <p>“Stevie B.” Hails from Greensburg, Pennsylvania. He started playing guitar his senior year in high school. He had
-            played on 2 hit records by the “Vogues”, and had backed up over 100 hit vocal bands. In 1966 Steve moved to New
-            York City where he landed the conductor/guitarist spot for “Neil Diamond” for 6 years playing on Solitary Man,
-            Cracklin Rosie, and Sweet Caroline. Steve stayed on with Neil till he moved to L.A. in 1972. He then recorded
-            and backed up Cher, Diana Ross, and The Spinners. Steve also played on “I’ll Be Around”. He has played for country
-            artists, Freddy Fender, Stella Parton, Loretta Lynn, Juice Newton and many others. Steve was on the road playing
-            music for over 25 years. His only local Pittsburgh bands were “Lois Scott” and Back up & Push plus the “Rick
-            Parker Band” playing at the Royce Hotel, Pittsburgh Airport for 5 years 6 nights a week as the house band.</p>
-          <p>Steve enjoys the intimacy of the duo with Bob challenging them to sing and play their very best!
-            <p>
+          <div class="bobCollapse panel-collapse" role="tabpanel" ng-class="{'collapse': !isBobOpen,
+                                                                             'collapse.in': isBobOpen}" >
+            <div class="panel-body">
+              <img class="pull-left" src="images/bob1.jpg">
+              <p>Bob resides in Ligonier, Pennsylvania. Songwriter musician, poet and humorist. Bob has been playing music professionally
+                for over 25 years, formerly as bassist and vocalist for Pittsburgh’s Back Up & Push plus The Bo Sloan Band,
+                which was voted the Number #1 Band in Pittsburgh in 1982, The Knobs (Irwin), Nighthawk (1) and Solo from
+                1998 to 2003. Bob’s recording credits include bassist on the first album released by Back Up & Push, Bo Sloan’s
+                “High Livin’” album, and as a session artist for many other Pittsburgh based groups.</p>
+              <p>Bob released his first solo effort entitled “The Dream”, locally December 23rd, 1993. “Garrett County” CD Released
+                August 2003. Bob is currently recording his 3rd CD in his recording studio, soon to be released.
+                <p>
+                  <p>Bob plays; acoustic guitar, bass guitar, mandolin, harmonica, lead and harmony vocals plus an avid songwriter.
+                    Past bands I have had the pleasure of working with: Atlantis, Blue Spruce, Main Street, Back Up & Push,
+                    The Bo Sloan Band, The Knobs, Nighthawk, and as soloist</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</section>
 
-<script>
-    $(document).on('click', '#c1', function() {
-        $('.bobCollapse').collapse('toggle');
-    });
-    $(document).on('click', '#c2', function() {
-        $('.steveCollapse').collapse('toggle');
-    });
-</script>
+  <div class="row">
+    <div class="col-md-10">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+            <div role="button" data-toggle="collapse" data-parent="#accordion" href="" id="c2" ng-click="isSteveOpen = !isSteveOpen">
+              <h3>Steve Budesky</h3>
+              <i class="glyphicon pull-right" ng-class="{'glyphicon-chevron-down': !isSteveOpen,
+                                                         'glyphicon-chevron-up': isSteveOpen}"></i>
+              <div style="margin-bottom: 8px;">Phone: <span class="lightblue-text">(724) 672-5084</span></div>
+              <div class="clearfix"></div>
+            </div>
+          </h4>
+        </div>
+        <div class="steveCollapse panel-collapse" role="tabpanel" ng-class="{'collapse': !isSteveOpen,
+                                                                             'collapse.in': isSteveOpen}">
+          <div class="panel-body">
+            <img class="pull-left" src="images/steve1.jpg">
+            <p>“Stevie B.” Hails from Greensburg, Pennsylvania. He started playing guitar his senior year in high school. He
+              had played on 2 hit records by the “Vogues”, and had backed up over 100 hit vocal bands. In 1966 Steve moved
+              to New York City where he landed the conductor/guitarist spot for “Neil Diamond” for 6 years playing on Solitary
+              Man, Cracklin Rosie, and Sweet Caroline. Steve stayed on with Neil till he moved to L.A. in 1972. He then recorded
+              and backed up Cher, Diana Ross, and The Spinners. Steve also played on “I’ll Be Around”. He has played for
+              country artists, Freddy Fender, Stella Parton, Loretta Lynn, Juice Newton and many others. Steve was on the
+              road playing music for over 25 years. His only local Pittsburgh bands were “Lois Scott” and Back up & Push
+              plus the “Rick Parker Band” playing at the Royce Hotel, Pittsburgh Airport for 5 years 6 nights a week as the
+              house band.</p>
+            <p>Steve enjoys the intimacy of the duo with Bob challenging them to sing and play their very best!
+              <p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
