@@ -1,3 +1,7 @@
+body{
+    background-image: url("../images/broken_noise.png");
+}
+
 #mainDiv {
     background-image: url("../images/stock-mic2.jpg");
     min-height: 92.9vh;
@@ -36,7 +40,7 @@ h1 {
 }
 .panel,
 .well {
-    opacity: .90;
+    opacity: .95;
 }
 .panel-border {
     border-style: solid;
@@ -82,8 +86,17 @@ section.about img {
     text-decoration: underline;
     color: #2980B9;
 }
+a#navTitle:before{
+    content: "NighthawK Acoustic/Electric Duo";
+}
+
 @media (min-width: 992px) {
     .center-medium {
         text-align: center;
     }
+}
+@media (max-width: 353px) {
+a#navTitle:before{
+    content: "NighthawK Duo";
+}
 }
