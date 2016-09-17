@@ -20,7 +20,8 @@ app.config(function ($routeProvider) {
             controller: "demoCtrl"
         })
         .when("/songs", {
-            templateUrl: "app/songs.htm"
+            templateUrl: "app/songs.htm",
+            controller: "songCtrl"
         })
 
 });
@@ -183,14 +184,29 @@ app.controller('homeCtrl', ['$scope', 'scheduleFactory', function ($scope, sched
 
 }]);
 
+app.controller('songCtrl', ['$scope', '$sce', function ($scope, $sce) {
+
+    $scope.playDemo = function(song){
+        $sce.trustAsResourceUrl(song.demoPath);
+        $scope.song = song;
+        $scope.$broadcast('playSong', song.demoPath);
+    }
+
+}]);
+
 app.directive('songList', ['songFactory', function (songFactory) {
     return {
         restrict: 'EA',
         scope: {
-            type: '@'
+            type: '@',
+            onDemoClick: '&'
         },
         templateUrl: 'app/songListDirective.htm',
         link: function ($scope, element, attrs) {
+
+            $scope.playDemo = function(index){
+                $scope.onDemoClick({ selectedSong: $scope.songs[index] });
+            }
 
             if ($scope.type === 'cover') {
                 $scope.title = 'Covers';
@@ -205,3 +221,19 @@ app.directive('songList', ['songFactory', function (songFactory) {
         }
     }
 }]);
+
+app.directive('songPlayer', function () {
+    return {
+        restrict: 'E',
+        scope: {
+        },
+        templateUrl: 'app/songPlayerDirective.htm',
+        link: function ($scope, element, attrs) {
+            $scope.$on('playSong', function(event, mass){
+            $scope.demoPath = mass;
+            $(element).find('audio').trigger('load');
+            $(element).find('audio').trigger('play');
+            });
+        }
+    }
+});

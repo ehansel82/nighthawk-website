@@ -1,6 +1,12 @@
 <section class="viewContainer">
 
-    <song-list type="cover"></song-list>
-    <song-list type="original"></song-list>
+    <song-list type="cover" on-demo-click="playDemo(selectedSong)"></song-list>
+    <song-list type="original" on-demo-click="playDemo(selectedSong)"></song-list>
 
+    <footer class="navbar-fixed-bottom well">
+        <div class="container">
+            <h3>{{song.title}}</h3>
+            <song-player></song-player>
+        </div>
+    </footer>
 </section>

@@ -11,7 +11,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="song in songs track by $index">
-                            <td ng-if="song.demoPath"><a class="appLink" href="">{{song.title}}<a>
+                            <td ng-if="song.demoPath"><a class="appLink" ng-click="playDemo($index)" href="">{{song.title}}<a>
                                 <span class="glyphicon glyphicon-music lightblue-text"> </span>
                             </td>
                             <td ng-if="!song.demoPath">{{song.title}}</td>
