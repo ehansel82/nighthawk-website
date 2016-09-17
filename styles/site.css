@@ -90,6 +90,10 @@ a:hover{
     text-align: center;
 }
 
+section.about img{
+    margin-right: 30px;
+}
+
 @media (min-width: 992px){
     .center-medium{
         text-align:center;  
