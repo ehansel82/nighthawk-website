@@ -24,5 +24,12 @@
         "endTime": "2:00AM",
         "comment": "This place is super duper awesome!",
         "googleAddress": "557 Wendel Rd, Irwin, PA 15642"
+    },
+    {
+        "date": "10/16/2016",
+        "venue": "Cool Springs",
+        "address": "Lignoier",
+        "startTime": "8:00PM",
+        "endTime": "2:00AM"
     }
 ]

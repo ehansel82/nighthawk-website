@@ -63,11 +63,8 @@ h1 {
 .yellow-text {
     color: #ffff00;
 }
-a:hover {
-    color: white;
-}
+
 .lightblue-text,
-.googleLink,
 .scheduleContainer a:visited
  {
     color: #5DADE2;
@@ -80,7 +77,10 @@ section.about img {
 }
 .googleLink {
     font-size: small;
+}
+.appLink{
     text-decoration: underline;
+    color: #2980B9;
 }
 @media (min-width: 992px) {
     .center-medium {

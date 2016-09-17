@@ -4,7 +4,8 @@ app.config(function ($routeProvider) {
 
     $routeProvider
         .when("/", {
-            templateUrl: "app/home.htm"
+            templateUrl: "app/home.htm",
+            controller: "homeCtrl"
         })
         .when("/schedule", {
             templateUrl: "app/schedule.htm",
@@ -24,6 +25,60 @@ app.config(function ($routeProvider) {
         })
 
 });
+
+app.factory('scheduleFactory', ['$http', function ($http) {
+
+    var scheduleFactory = {};
+
+    scheduleFactory.getAllShows = function () {
+        return $http.get("data/schedule.json");
+    }
+
+    scheduleFactory.filterFuture = function (shows) {
+        var filteredShows = shows.filter(futureFilter);
+        filteredShows.sort(showCompare);
+        return filteredShows;
+    }
+
+    scheduleFactory.filterUpcoming = function (shows) {
+        var futureShows = shows.filter(futureFilter);
+        var upcomingShows = shows.filter(upcomingFilter);
+        upcomingShows.sort(showCompare);
+        return upcomingShows;
+    }
+
+    function futureFilter(show) {
+        var twoDaysAgo = new moment().subtract(2, 'days');
+        var schedDate = moment(show.date, "MM/DD/YYYY");
+        if (schedDate > twoDaysAgo) {
+            return true;
+        }
+    }
+
+    function upcomingFilter(show) {
+        var upcomingThreshold = new moment().add(1, 'month');
+        var schedDate = moment(show.date, "MM/DD/YYYY");
+        if (schedDate <= upcomingThreshold) {
+            return true;
+        }
+    }
+
+    function showCompare(a, b) {
+        var aDate = moment(a.date, "MM/DD/YYYY");
+        var bDate = moment(b.date, "MM/DD/YYYY");
+
+        if (a.date < b.date) {
+            return -1;
+        } else if (a.date > b.date) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    return scheduleFactory;
+
+}]);
 
 app.controller('navCtrl', ['$scope', function ($scope) {
 
@@ -72,7 +127,7 @@ app.controller('demoCtrl', ['$scope', '$http', function ($scope, $http) {
         });
 
     $scope.toggleOpen = function ($index) {
-        if($scope.demos[$index].isOpen === undefined){
+        if ($scope.demos[$index].isOpen === undefined) {
             $scope.demos[$index].isOpen = true;
         } else {
             $scope.demos[$index].isOpen = !$scope.demos[$index].isOpen;
@@ -82,12 +137,12 @@ app.controller('demoCtrl', ['$scope', '$http', function ($scope, $http) {
 
 app.controller('aboutCtrl', ['$scope', function ($scope) {
 
-    if($(window).width() <= 768){
+    if ($(window).width() <= 768) {
         $scope.isBobOpen = false;
         $scope.isSteveOpen = false;
     } else {
         $scope.isBobOpen = true;
-        $scope.isSteveOpen = true;        
+        $scope.isSteveOpen = true;
     }
 
 }]);
@@ -109,34 +164,20 @@ app.controller('songCtrl', ['$scope', '$http', function ($scope, $http) {
 
 }]);
 
-app.controller('scheduleCtrl', ['$scope', '$http', function ($scope, $http) {
+app.controller('scheduleCtrl', ['$scope', 'scheduleFactory', function ($scope, scheduleFactory) {
 
-    $http.get("data/schedule.json")
+    scheduleFactory.getAllShows()
         .then(function (response) {
-            $scope.shows = response.data;
-            $scope.shows = $scope.shows.filter(schedFilter);
-            $scope.shows.sort(schedCompare);
+            $scope.shows = scheduleFactory.filterFuture(response.data);
         });
 
-    var schedFilter = function (show) {
-        var twoDaysAgo = new moment().subtract(2, 'days');
-        var schedDate = moment(show.date, "MM/DD/YYYY");
-        if (schedDate > twoDaysAgo) {
-            return true;
-        }
-    }
+}]);
 
-    var schedCompare = function (a, b) {
-        var aDate = moment(a.date, "MM/DD/YYYY");
-        var bDate = moment(b.date, "MM/DD/YYYY");
+app.controller('homeCtrl', ['$scope', 'scheduleFactory', function ($scope, scheduleFactory) {
 
-        if (a.date < b.date) {
-            return -1;
-        } else if (a.date > b.date) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
+    scheduleFactory.getAllShows()
+        .then(function (response) {
+            $scope.shows = scheduleFactory.filterUpcoming(response.data);
+        });
 
 }]);
