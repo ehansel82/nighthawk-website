@@ -1,0 +1,28 @@
+[
+    {
+        "date": "8/8/2018",
+        "venue": "Stonewater Cafe",
+        "address": "Main Street, South Greensburg",
+        "startTime": "10:00PM",
+        "endTime": "2:00AM",
+        "comment": "This place is cool"
+    },
+    {
+        "date": "11/2/2016",
+        "venue": "Cafe Supreme",
+        "address": "Main Street, Irwin",
+        "startTime": "10:00PM",
+        "endTime": "2:00AM",
+        "comment": "This place is cooler",
+        "googleAddress": ""
+    },
+    {
+        "date": "6/4/2018",
+        "venue": "Rodney's",
+        "address": "Main Street, Irwin",
+        "startTime": "10:00PM",
+        "endTime": "2:00AM",
+        "comment": "This place is super duper awesome!",
+        "googleAddress": "557 Wendel Rd, Irwin, PA 15642"
+    }
+]

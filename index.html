@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nighthawk Acoustic Duo</title>
+    <title>NighthawK Acoustic Duo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css" />
@@ -14,6 +14,7 @@
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/moment/min/moment.min.js"></script>
     <script src="app/app.js"></script>
 </head>
 
@@ -28,12 +29,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Nighthawk Acoustic Duo</a>
+                <a class="navbar-brand" href="#/">NighthawK Acoustic/Electric Duo</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li ng-click="setHomeActive()" ng-class="{active: isHomeActive}"><a href="#/">Home</a></li>
                     <li ng-click="setScheduleActive()" ng-class="{active: isScheduleActive}"><a href="#schedule">Schedule</a></li>
+                    <li ng-click="setSongsActive()" ng-class="{active: isSongsActive}"><a href="#songs">Songs</a></li>
                     <li ng-click="setDemosActive()" ng-class="{active: isDemosActive}"><a href="#demos">Demos</a></li>
                     <li ng-click="setAboutActive()" ng-class="{active: isAboutActive}"><a href="#about">About</a></li>
                 </ul>
@@ -41,11 +43,10 @@
         </div>
     </nav>
     <div class="angularView" ng-view></div>
+    <script>
+        $('.navbar-collapse a').click(function(){
+            $(".navbar-collapse").collapse('hide');
+        });
+    </script>
 </body>
-<script>
-    $('.navbar-collapse a').click(function(){
-        $(".navbar-collapse").collapse('hide');
-    });
-</script>
-
 </html>
