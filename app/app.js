@@ -1,4 +1,4 @@
-var app = angular.module("nighthawkApp", ["ngRoute"]);
+var app = angular.module("nighthawkApp", ["ngRoute", "ngAnimate"]);
 
 app.config(function ($routeProvider) {
 
@@ -39,6 +39,16 @@ app.factory('songFactory', ['$http', function ($http) {
             return (song.type === type);
         })
     };
+
+    songFactory.songSort = function (a, b) {
+        if (a.artist < b.artist) {
+            return -1;
+        } else if (a.artist > b.artist) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 
     return songFactory;
 
@@ -83,9 +93,6 @@ app.factory('scheduleFactory', ['$http', function ($http) {
     }
 
     function showCompare(a, b) {
-        var aDate = moment(a.date, "MM/DD/YYYY");
-        var bDate = moment(b.date, "MM/DD/YYYY");
-
         if (a.date < b.date) {
             return -1;
         } else if (a.date > b.date) {
@@ -189,7 +196,12 @@ app.controller('songCtrl', ['$scope', '$sce', function ($scope, $sce) {
     $scope.playDemo = function(song){
         $sce.trustAsResourceUrl(song.demoPath);
         $scope.song = song;
-        $scope.$broadcast('playSong', song.demoPath);
+        $scope.$broadcast('playSong', song);
+    }
+
+    $scope.stopDemo = function(){
+        $scope.$broadcast('stopSong');
+        $scope.song = null;
     }
 
 }]);
@@ -216,7 +228,7 @@ app.directive('songList', ['songFactory', function (songFactory) {
 
             songFactory.getAllSongs()
                 .then(function (response) {
-                    $scope.songs = songFactory.filterByType(response.data, $scope.type);
+                    $scope.songs = songFactory.filterByType(response.data, $scope.type).sort(songFactory.songSort);
                 });
         }
     }
@@ -230,9 +242,15 @@ app.directive('songPlayer', function () {
         templateUrl: 'app/songPlayerDirective.htm',
         link: function ($scope, element, attrs) {
             $scope.$on('playSong', function(event, mass){
-            $scope.demoPath = mass;
-            $(element).find('audio').trigger('load');
-            $(element).find('audio').trigger('play');
+                $scope.demoPath = mass.demoPath;
+                $scope.title = mass.title;
+                $(element).find('audio').trigger('pause');
+                $(element).find('audio').trigger('load');
+                $(element).find('audio').trigger('play');
+            });
+
+            $scope.$on('stopSong', function(){
+                $(element).find('audio').trigger('pause');
             });
         }
     }

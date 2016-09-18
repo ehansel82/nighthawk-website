@@ -90,6 +90,19 @@ a#navTitle:before{
     content: "NighthawK Acoustic/Electric Duo";
 }
 
+section.songsContainer button.close{
+    color: white;
+    font-size: 2em;
+}
+
+.ng-hide-add {
+    animation:0.5s slideOutDown ease; 
+}
+
+.ng-hide-remove {
+    animation:0.5s slideInUp ease; 
+}
+
 @media (min-width: 992px) {
     .center-medium {
         text-align: center;

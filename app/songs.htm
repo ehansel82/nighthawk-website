@@ -1,11 +1,13 @@
-<section class="viewContainer">
+<section class="viewContainer songsContainer" style="padding-bottom: 200px">
 
     <song-list type="cover" on-demo-click="playDemo(selectedSong)"></song-list>
     <song-list type="original" on-demo-click="playDemo(selectedSong)"></song-list>
 
-    <footer class="navbar-fixed-bottom well">
+    <footer ng-show="song" class="navbar-fixed-bottom well">
         <div class="container">
-            <h3>{{song.title}}</h3>
+            <div>
+                <button type="button" class="close" ng-click="stopDemo()"><span aria-hidden="true">&times;</span></button>
+            </div>
             <song-player></song-player>
         </div>
     </footer>
