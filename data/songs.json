@@ -12,8 +12,8 @@
     },
     {
         "title": "Dog Named Boo",
-        "artist": "Bob Hansel",
-        "type": "original",
+        "artist": "Lobo",
+        "type": "cover",
         "demoPath": "music/Dog Name Boo.mp3"
     },
     {
@@ -53,7 +53,7 @@
     },
     {
         "title": "Solitary Man",
-        "artist": "Elvis Presley",
+        "artist": "Neil Diamond",
         "type": "cover",
         "demoPath": "music/Solitary Man.mp3"
     },

@@ -11,13 +11,8 @@
     <link rel="stylesheet" type="text/css" href="bootstrap_themes/bootstrap-slate.min.css" />
     <link rel="stylesheet" type="text/css" href="styles/animate.css" />
     <link rel="stylesheet" type="text/css" href="styles/site.css" />
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="node_modules/angular-route/angular-route.min.js"></script>
-    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
-    <script src="node_modules/moment/min/moment.min.js"></script>
-    <script src="app/app.js"></script>
+    <script src="dist/bundle.min.js"></script>
+
 </head>
 
 <body ng-app="nighthawkApp">
@@ -38,7 +33,6 @@
                     <li ng-click="setHomeActive()" ng-class="{active: isHomeActive}"><a href="#/">Home</a></li>
                     <li ng-click="setScheduleActive()" ng-class="{active: isScheduleActive}"><a href="#schedule">Schedule</a></li>
                     <li ng-click="setSongsActive()" ng-class="{active: isSongsActive}"><a href="#songs">Songs</a></li>
-                    <li ng-click="setDemosActive()" ng-class="{active: isDemosActive}"><a href="#demos">Demos</a></li>
                     <li ng-click="setAboutActive()" ng-class="{active: isAboutActive}"><a href="#about">About</a></li>
                 </ul>
             </div>

@@ -1,6 +1,6 @@
 var app = angular.module("nighthawkApp", ["ngRoute", "ngAnimate"]);
 
-app.config(function ($routeProvider) {
+app.config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
         .when("/", {
@@ -24,7 +24,7 @@ app.config(function ($routeProvider) {
             controller: "songCtrl"
         })
 
-});
+}] );
 
 app.factory('songFactory', ['$http', function ($http) {
 
@@ -244,13 +244,13 @@ app.directive('songPlayer', function () {
             $scope.$on('playSong', function(event, mass){
                 $scope.demoPath = mass.demoPath;
                 $scope.title = mass.title;
-                $(element).find('audio').trigger('pause');
-                $(element).find('audio').trigger('load');
-                $(element).find('audio').trigger('play');
+                $(element).find('audio')[0].trigger('pause');
+                $(element).find('audio')[0].trigger('load');
+                $(element).find('audio')[0].trigger('play');
             });
 
             $scope.$on('stopSong', function(){
-                $(element).find('audio').trigger('pause');
+                $(element).find('audio').trigger[0]('pause');
             });
         }
     }
