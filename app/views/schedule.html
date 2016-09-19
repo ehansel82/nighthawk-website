@@ -1,0 +1,22 @@
+<section class="scheduleContainer viewContainer">
+  <h2 class="yellow-text center-medium">Full Schedule</h2>
+
+  <div ng-repeat="show in shows track by $index">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4><span class="yellow-text">{{show.date}}</span> - <span>{{show.venue}}</span>
+                <span ng-if="show.googleAddress"><a class="appLink googleLink" ng-href="http://maps.google.com/?q={{show.googleAddress}}" target="blank">(Google Map)</a></span>
+                </h4>
+          </div>
+          <div class="panel-body">
+            <div>{{show.address}}</div>
+            <div>{{show.startTime}} to {{show.endTime}}</div>
+            <div class="comment lightblue-text">{{show.comment}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

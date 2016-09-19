@@ -1,0 +1,49 @@
+<section id="mainDiv" class="viewContainer">
+
+    <div class="well center-text yellow-text">
+        <h2>Live Entertainment. Cover Material and Originals. Unique. Not Loud.</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <div class="panel panel-border">
+                <p>NighthawK is the combination of two fine musicians from the Greensburg area. Weaved together by the love
+                    of the art and the desire to entertain, Bob and Steve enjoy what they do, and that is play music. You’ll
+                    find this duo very capable of entertaining your clients, guests or special event.</p>
+                <div class="bold center-text darkyellow-text">Acoustic + Electric Guitars</div>
+                <div class="bold center-text darkyellow-text">Lead and Harmony Vocals by Both Gentlemen. </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <div id="contactPanel" class="panel panel-border">
+                <h4 class="red-text"><strong>FOR BOOKINGS CALL</strong></h4>
+                <div><strong>Bob:</strong><span class="lightblue-text"> (724) 858-0288</span></div>
+                <div><strong>Steve:</strong><span class="lightblue-text"> (724) 672-5084</span></div>
+                <div><strong>Email:</strong><span><a class="lightblue-text" href="mailto:hanselbob@yahoo.com" target="_top"> hanselbob@yahoo.com</a></span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-if="shows && shows.length > 0">
+        <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><span class="darkyellow-text">Upcoming Shows</span></h4>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="show in shows track by $index">
+                            <div ><strong>{{show.date}}</strong> <span style="font-size: smaller; font-style: italic;">{{show.startTime}} to {{show.endTime}}</span></div>
+                            <div class="lightblue-text">{{show.venue}}</div>
+                        </li>
+                    </ul>
+                    <a class="appLink" href="#/schedule">Full Schedule</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

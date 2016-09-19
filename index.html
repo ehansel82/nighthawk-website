@@ -11,12 +11,12 @@
     <link rel="stylesheet" type="text/css" href="bootstrap_themes/bootstrap-slate.min.css" />
     <link rel="stylesheet" type="text/css" href="styles/animate.css" />
     <link rel="stylesheet" type="text/css" href="styles/site.css" />
-    <script src="dist/bundle.min.js"></script>
+    <script src="source/bundle.js"></script>
 
 </head>
 
 <body ng-app="nighthawkApp">
-    <nav id="mainNav" class="navbar navbar-fixed-top navbar-inverse">
+    <nav id="mainNav" class="navbar navbar-fixed-top navbar-inverse" ng-controller="navController">
         <div class="container">
             <div class="navbar-header">
                 <button id="collapseButton" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
