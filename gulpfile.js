@@ -19,7 +19,14 @@ gulp.task('copyjs', function() {
 });
 
 gulp.task('concatjs', function() {
-  return gulp.src(['source/jquery.js','source/angular.js', 'source/*.js', 'app/app.module.js', 'app/**/*.js'])
+  return gulp.src(['source/jquery.js',
+                   'source/bootstrap.js',
+                   'source/moment.js',
+                   'source/angular.js',
+                   'source/angular-route.js',
+                   'source/angular-animate.js', 
+                   'app/app.module.js', 
+                   'app/**/*.js'])
     .pipe(concat('bundle.js'))
     .pipe(gulp.dest('source'));
 });
