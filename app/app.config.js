@@ -6,19 +6,19 @@
         $routeProvider
             .when("/", {
                 templateUrl: "app/views/home.html",
-                controller: "homeController"
+                controller: "homeController as vm"
             })
             .when("/schedule", {
                 templateUrl: "app/views/schedule.html",
-                controller: "scheduleController"
+                controller: "scheduleController as vm"
             })
             .when("/about", {
                 templateUrl: "app/views/about.html",
-                controller: "aboutController"
+                controller: "aboutController as vm"
             })
             .when("/songs", {
                 templateUrl: "app/views/songs.html",
-                controller: "songController"
+                controller: "songController as vm"
             })
     }
 })();

@@ -11,12 +11,12 @@
     <link rel="stylesheet" type="text/css" href="bootstrap_themes/bootstrap-slate.min.css" />
     <link rel="stylesheet" type="text/css" href="styles/animate.css" />
     <link rel="stylesheet" type="text/css" href="styles/site.css" />
-    <script src="source/bundle.js"></script>
+    <script src="dist/bundle.min.js"></script>
 
 </head>
 
 <body ng-app="nighthawkApp">
-    <nav id="mainNav" class="navbar navbar-fixed-top navbar-inverse" ng-controller="navController">
+    <nav id="mainNav" class="navbar navbar-fixed-top navbar-inverse" ng-controller="navController as vm">
         <div class="container">
             <div class="navbar-header">
                 <button id="collapseButton" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
@@ -30,10 +30,10 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li ng-click="setHomeActive()" ng-class="{active: isHomeActive}"><a href="#/">Home</a></li>
-                    <li ng-click="setScheduleActive()" ng-class="{active: isScheduleActive}"><a href="#schedule">Schedule</a></li>
-                    <li ng-click="setSongsActive()" ng-class="{active: isSongsActive}"><a href="#songs">Songs</a></li>
-                    <li ng-click="setAboutActive()" ng-class="{active: isAboutActive}"><a href="#about">About</a></li>
+                    <li ng-click="vm.setHomeActive()" ng-class="{active: vm.isHomeActive}"><a href="#/">Home</a></li>
+                    <li ng-click="vm.setScheduleActive()" ng-class="{active: vm.isScheduleActive}"><a href="#schedule">Schedule</a></li>
+                    <li ng-click="vm.setSongsActive()" ng-class="{active: vm.isSongsActive}"><a href="#songs">Songs</a></li>
+                    <li ng-click="vm.setAboutActive()" ng-class="{active: vm.isAboutActive}"><a href="#about">About</a></li>
                 </ul>
             </div>
         </div>

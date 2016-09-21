@@ -2,14 +2,16 @@
     angular.module("nighthawkApp")
         .controller('aboutController', ['$scope', aboutController])
 
-    function aboutController($scope) {
+    function aboutController($window) {
+
+        var vm = this;
 
         if ($(window).width() <= 768) {
-            $scope.isBobOpen = false;
-            $scope.isSteveOpen = false;
+            vm.isBobOpen = false;
+            vm.isSteveOpen = false;
         } else {
-            $scope.isBobOpen = true;
-            $scope.isSteveOpen = true;
+            vm.isBobOpen = true;
+            vm.isSteveOpen = true;
         }
 
     }

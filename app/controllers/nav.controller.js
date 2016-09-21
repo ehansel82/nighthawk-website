@@ -1,37 +1,39 @@
 (function () {
     angular.module("nighthawkApp")
-        .controller('navController', ['$scope', navController])
+        .controller('navController', navController)
 
-    function navController($scope) {
+    function navController() {
 
-        $scope.setScheduleActive = function () {
-            $scope.clearAllActive();
-            $scope.isScheduleActive = true;
+        var vm = this;
+
+        vm.setScheduleActive = function () {
+            vm.clearAllActive();
+            vm.isScheduleActive = true;
         };
 
-        $scope.setAboutActive = function () {
-            $scope.clearAllActive();
-            $scope.isAboutActive = true;
+        vm.setAboutActive = function () {
+            vm.clearAllActive();
+            vm.isAboutActive = true;
         };
 
-        $scope.setHomeActive = function () {
-            $scope.clearAllActive();
-            $scope.isHomeActive = true;
+        vm.setHomeActive = function () {
+            vm.clearAllActive();
+            vm.isHomeActive = true;
         };
 
-        $scope.setSongsActive = function () {
-            $scope.clearAllActive();
-            $scope.isSongsActive = true;
+        vm.setSongsActive = function () {
+            vm.clearAllActive();
+            vm.isSongsActive = true;
         };
 
-        $scope.clearAllActive = function () {
-            $scope.isAboutActive = false;
-            $scope.isScheduleActive = false;
-            $scope.isHomeActive = false;
-            $scope.isSongsActive = false;
+        vm.clearAllActive = function () {
+            vm.isAboutActive = false;
+            vm.isScheduleActive = false;
+            vm.isHomeActive = false;
+            vm.isSongsActive = false;
         };
 
-        $scope.clearAllActive();
-        $scope.setHomeActive();
+        vm.clearAllActive();
+        vm.setHomeActive();
     }
 })();

@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <div class="row" ng-if="shows && shows.length > 0">
+    <div class="row" ng-if="vm.shows && vm.shows.length > 0">
         <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item" ng-repeat="show in shows track by $index">
+                        <li class="list-group-item" ng-repeat="show in vm.shows track by $index">
                             <div ><strong>{{show.date}}</strong> <span style="font-size: smaller; font-style: italic;">{{show.startTime}} to {{show.endTime}}</span></div>
                             <div class="lightblue-text">{{show.venue}}</div>
                         </li>

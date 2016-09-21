@@ -12,18 +12,18 @@
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="headingOne">
             <h4 class="panel-title">
-              <div role="button" data-toggle="collapse" data-parent="#accordion" href="" id="c1" ng-click="isBobOpen = !isBobOpen">
+              <div role="button" data-toggle="collapse" data-parent="#accordion" href="" id="c1" ng-click="vm.isBobOpen = !vm.isBobOpen">
                 <h3>Bob Hansel</h3>
-                <i class="glyphicon pull-right" ng-class="{'glyphicon-chevron-down': !isBobOpen,
-                                                           'glyphicon-chevron-up': isBobOpen}"></i>
+                <i class="glyphicon pull-right" ng-class="{'glyphicon-chevron-down': !vm.isBobOpen,
+                                                           'glyphicon-chevron-up': vm.isBobOpen}"></i>
                 <div style="margin-bottom: 8px;">Phone: <span class="lightblue-text">(724) 858-0288</span></div>
                 <div>Email: <span class="lightblue-text"> hanselbob@yahoo.com</span></div>
                 <div class="clearfix"></div>
               </div>
             </h4>
           </div>
-          <div class="bobCollapse panel-collapse" role="tabpanel" ng-class="{'collapse': !isBobOpen,
-                                                                             'collapse.in': isBobOpen}" >
+          <div class="bobCollapse panel-collapse" role="tabpanel" ng-class="{'collapse': !vm.isBobOpen,
+                                                                             'collapse.in': vm.isBobOpen}" >
             <div class="panel-body">
               <img class="pull-left" src="images/bob1.jpg">
               <p>Bob resides in Ligonier, Pennsylvania. Songwriter musician, poet and humorist. Bob has been playing music professionally
@@ -49,17 +49,17 @@
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingOne">
           <h4 class="panel-title">
-            <div role="button" data-toggle="collapse" data-parent="#accordion" href="" id="c2" ng-click="isSteveOpen = !isSteveOpen">
+            <div role="button" data-toggle="collapse" data-parent="#accordion" href="" id="c2" ng-click="vm.isSteveOpen = !vm.isSteveOpen">
               <h3>Steve Budesky</h3>
-              <i class="glyphicon pull-right" ng-class="{'glyphicon-chevron-down': !isSteveOpen,
-                                                         'glyphicon-chevron-up': isSteveOpen}"></i>
+              <i class="glyphicon pull-right" ng-class="{'glyphicon-chevron-down': !vm.isSteveOpen,
+                                                         'glyphicon-chevron-up': vm.isSteveOpen}"></i>
               <div style="margin-bottom: 8px;">Phone: <span class="lightblue-text">(724) 672-5084</span></div>
               <div class="clearfix"></div>
             </div>
           </h4>
         </div>
-        <div class="steveCollapse panel-collapse" role="tabpanel" ng-class="{'collapse': !isSteveOpen,
-                                                                             'collapse.in': isSteveOpen}">
+        <div class="steveCollapse panel-collapse" role="tabpanel" ng-class="{'collapse': !vm.isSteveOpen,
+                                                                             'collapse.in': vm.isSteveOpen}">
           <div class="panel-body">
             <img class="pull-left" src="images/steve1.jpg">
             <p>“Stevie B.” Hails from Greensburg, Pennsylvania. He started playing guitar his senior year in high school. He

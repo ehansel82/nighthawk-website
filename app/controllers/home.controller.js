@@ -1,12 +1,14 @@
 (function () {
     angular.module("nighthawkApp")
-        .controller('homeController', ['$scope', 'scheduleFactory', homeController])
+        .controller('homeController', ['scheduleFactory', homeController])
 
-    function homeController($scope, scheduleFactory) {
-
+    function homeController(scheduleFactory) {
+        
+        var vm = this;
+        
         scheduleFactory.getAllShows()
             .then(function (response) {
-                $scope.shows = scheduleFactory.filterUpcoming(response.data);
+                vm.shows = scheduleFactory.filterUpcoming(response.data);
             });
 
     }

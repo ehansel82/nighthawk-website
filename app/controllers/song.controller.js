@@ -4,15 +4,17 @@
 
     function songController($scope, $sce) {
 
-        $scope.playDemo = function (song) {
+        var vm = this;
+
+        vm.playDemo = function (song) {
             $sce.trustAsResourceUrl(song.demoPath);
-            $scope.song = song;
+            vm.song = song;
             $scope.$broadcast('playSong', song);
         }
 
-        $scope.stopDemo = function () {
+        vm.stopDemo = function () {
             $scope.$broadcast('stopSong');
-            $scope.song = null;
+            vm.song = null;
         }
 
     }

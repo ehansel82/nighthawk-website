@@ -44,5 +44,5 @@ gulp.task('compress', function (cb) {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('app/**/*.js', ['copyjs', 'concatjs', 'compress']);
+  gulp.watch('app/**/*.js', ['copyjs', 'concatjs']);
 });
