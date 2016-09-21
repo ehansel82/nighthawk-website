@@ -53761,68 +53761,6 @@ angular.module('ngAnimate', [], function initAngularHelpers() {
 })();
 (function () {
     angular.module("nighthawkApp")
-        .directive('songList', ['songFactory', songList])
-
-    function songList(songFactory) {
-
-        return {
-            restrict: 'EA',
-            scope: {
-                type: '@',
-                onDemoClick: '&'
-            },
-            templateUrl: 'app/directives/song-list.directive.html',
-            link: function ($scope, element, attrs) {
-
-                $scope.playDemo = function (index) {
-                    $scope.onDemoClick({ selectedSong: $scope.songs[index] });
-                }
-
-                if ($scope.type === 'cover') {
-                    $scope.title = 'Covers';
-                } else {
-                    $scope.title = 'Originals';
-                }
-
-                songFactory.getAllSongs()
-                    .then(function (response) {
-                        $scope.songs = songFactory.filterByType(response.data, $scope.type).sort(songFactory.songSort);
-                    });
-            }
-        }
-
-    }
-})();
-(function () {
-    angular.module("nighthawkApp")
-        .directive('songPlayer', songPlayer)
-
-    function songPlayer() {
-
-        return {
-            restrict: 'E',
-            scope: {
-            },
-            templateUrl: 'app/directives/song-player.directive.html',
-            link: function ($scope, $element, attrs) {
-                $scope.$on('playSong', function (event, mass) {
-                    $scope.demoPath = mass.demoPath;
-                    $scope.title = mass.title;
-                    angular.element($element.find('audio')[0]).trigger('pause');
-                    angular.element($element.find('audio')[0]).trigger('load');
-                    angular.element($element.find('audio')[0]).trigger('play');
-                });
-
-                $scope.$on('stopSong', function () {
-                    angular.element($element.find('audio')[0]).trigger('pause');
-                });
-            }
-        }
-
-    }
-})();
-(function () {
-    angular.module("nighthawkApp")
         .factory('scheduleFactory', ['$http', scheduleFactory])
 
     function scheduleFactory($http) {
@@ -53905,5 +53843,67 @@ angular.module('ngAnimate', [], function initAngularHelpers() {
         }
 
         return songFactory;
+    }
+})();
+(function () {
+    angular.module("nighthawkApp")
+        .directive('songList', ['songFactory', songList])
+
+    function songList(songFactory) {
+
+        return {
+            restrict: 'EA',
+            scope: {
+                type: '@',
+                onDemoClick: '&'
+            },
+            templateUrl: 'app/directives/song-list.directive.html',
+            link: function ($scope, element, attrs) {
+
+                $scope.playDemo = function (index) {
+                    $scope.onDemoClick({ selectedSong: $scope.songs[index] });
+                }
+
+                if ($scope.type === 'cover') {
+                    $scope.title = 'Covers';
+                } else {
+                    $scope.title = 'Originals';
+                }
+
+                songFactory.getAllSongs()
+                    .then(function (response) {
+                        $scope.songs = songFactory.filterByType(response.data, $scope.type).sort(songFactory.songSort);
+                    });
+            }
+        }
+
+    }
+})();
+(function () {
+    angular.module("nighthawkApp")
+        .directive('songPlayer', songPlayer)
+
+    function songPlayer() {
+
+        return {
+            restrict: 'E',
+            scope: {
+            },
+            templateUrl: 'app/directives/song-player.directive.html',
+            link: function ($scope, $element, attrs) {
+                $scope.$on('playSong', function (event, mass) {
+                    $scope.demoPath = mass.demoPath;
+                    $scope.title = mass.title;
+                    angular.element($element.find('audio')[0]).trigger('pause');
+                    angular.element($element.find('audio')[0]).trigger('load');
+                    angular.element($element.find('audio')[0]).trigger('play');
+                });
+
+                $scope.$on('stopSong', function () {
+                    angular.element($element.find('audio')[0]).trigger('pause');
+                });
+            }
+        }
+
     }
 })();
