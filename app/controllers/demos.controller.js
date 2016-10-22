@@ -1,10 +1,12 @@
 (function () {
     angular.module("nighthawkApp")
-        .controller('songController', ['$scope', '$sce', songController])
+        .controller('demosController', ['$scope', '$sce', demosController])
 
-    function songController($scope, $sce) {
+    function demosController($scope, $sce) {
 
         var vm = this;
+
+        vm.playingSong = false;
 
         vm.playDemo = function (song) {
             $sce.trustAsResourceUrl(song.demoPath);

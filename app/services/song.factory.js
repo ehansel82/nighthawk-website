@@ -16,10 +16,16 @@
             })
         };
 
+        songFactory.onlyDemos = function (songs) {
+            return songs.filter(function (song) {
+                return (song.demoPath !== null && song.demoPath !== undefined);
+            })
+        };
+
         songFactory.songSort = function (a, b) {
-            if (a.artist < b.artist) {
+            if (a.title < b.title) {
                 return -1;
-            } else if (a.artist > b.artist) {
+            } else if (a.title > b.title) {
                 return 1;
             } else {
                 return 0;

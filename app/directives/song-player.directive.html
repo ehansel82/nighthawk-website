@@ -1,9 +1,16 @@
-<div>
-    <h3>{{title}}</h3>
-</div>
-<div>
-    <audio controls autoplay>
-        <source ng-src="{{demoPath}}" type="audio/mpeg"> 
-        <div>Your browser does not support the audio tag.</div>
-    </audio>
-</div>
+<footer ng-show="playingSong" class="navbar-fixed-bottom well">
+	<div class="container">
+		<div>
+			<button id="song-player-close" type="button" class="close"><span aria-hidden="true">&times;</span></button>
+		</div>
+		<div>
+			<h3>{{title}}</h3>
+		</div>
+		<div>
+			<audio controls autoplay="false">
+				<source ng-src="{{demoPath}}" type="audio/mpeg">
+				<div>Your browser does not support the audio tag.</div>
+			</audio>
+		</div>
+	</div>
+</footer>

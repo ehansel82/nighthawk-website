@@ -16,9 +16,12 @@
                 templateUrl: "app/views/about.html",
                 controller: "aboutController as vm"
             })
+            .when("/demos", {
+                templateUrl: "app/views/demos.html",
+                controller: "demosController as vm"
+            })
             .when("/songs", {
-                templateUrl: "app/views/songs.html",
-                controller: "songController as vm"
+                templateUrl: "app/views/songs.html"
             })
             .when("/photos", {
                 templateUrl: "app/views/photos.html"

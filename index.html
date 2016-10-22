@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content=".">
-    <link rel="stylesheet" type="text/css" href="source/bundle.css" />
+    <link rel="stylesheet" type="text/css" href="dist/bundle.min.css" />
     <script src="source/bundle.js"></script>
 </head>
 
@@ -29,6 +29,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li ng-click="vm.setHomeActive()" ng-class="{active: vm.isHomeActive}"><a href="#/">Home</a></li>
                     <li ng-click="vm.setScheduleActive()" ng-class="{active: vm.isScheduleActive}"><a href="#schedule">Schedule</a></li>
+                    <li ng-click="vm.setDemosActive()" ng-class="{active: vm.isDemosActive}"><a href="#demos">Demos</a></li>
                     <li ng-click="vm.setSongsActive()" ng-class="{active: vm.isSongsActive}"><a href="#songs">Songs</a></li>
                     <li ng-click="vm.setPhotosActive()" ng-class="{active: vm.isPhotosActive}"><a href="#photos">Photos</a></li>
                     <li ng-click="vm.setAboutActive()" ng-class="{active: vm.isAboutActive}"><a href="#about">About</a></li>

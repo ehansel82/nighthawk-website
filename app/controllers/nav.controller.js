@@ -21,6 +21,11 @@
             vm.isHomeActive = true;
         };
 
+        vm.setDemosActive = function () {
+            vm.clearAllActive();
+            vm.isDemosActive = true;
+        };
+
         vm.setSongsActive = function () {
             vm.clearAllActive();
             vm.isSongsActive = true;
@@ -36,6 +41,7 @@
             vm.isScheduleActive = false;
             vm.isHomeActive = false;
             vm.isSongsActive = false;
+            vm.isDemosActive = false;
             vm.isPhotosActive = false;
         };
 

@@ -53645,75 +53645,16 @@ angular.module('ngAnimate', [], function initAngularHelpers() {
                 templateUrl: "app/views/about.html",
                 controller: "aboutController as vm"
             })
+            .when("/demos", {
+                templateUrl: "app/views/demos.html",
+                controller: "demosController as vm"
+            })
             .when("/songs", {
-                templateUrl: "app/views/songs.html",
-                controller: "songController as vm"
+                templateUrl: "app/views/songs.html"
             })
             .when("/photos", {
                 templateUrl: "app/views/photos.html"
             })
-    }
-})();
-(function () {
-    angular.module("nighthawkApp")
-        .directive('songList', ['songFactory', songList])
-
-    function songList(songFactory) {
-
-        return {
-            restrict: 'EA',
-            scope: {
-                type: '@',
-                onDemoClick: '&'
-            },
-            templateUrl: 'app/directives/song-list.directive.html',
-            link: function ($scope, element, attrs) {
-
-                $scope.playDemo = function (index) {
-                    $scope.onDemoClick({ selectedSong: $scope.songs[index] });
-                }
-
-                if ($scope.type === 'cover') {
-                    $scope.title = 'Covers';
-                } else {
-                    $scope.title = 'Originals';
-                }
-
-                songFactory.getAllSongs()
-                    .then(function (response) {
-                        $scope.songs = songFactory.filterByType(response.data, $scope.type).sort(songFactory.songSort);
-                    });
-            }
-        }
-
-    }
-})();
-(function () {
-    angular.module("nighthawkApp")
-        .directive('songPlayer', songPlayer)
-
-    function songPlayer() {
-
-        return {
-            restrict: 'E',
-            scope: {
-            },
-            templateUrl: 'app/directives/song-player.directive.html',
-            link: function ($scope, $element, attrs) {
-                $scope.$on('playSong', function (event, mass) {
-                    $scope.demoPath = mass.demoPath;
-                    $scope.title = mass.title;
-                    angular.element($element.find('audio')[0]).trigger('pause');
-                    angular.element($element.find('audio')[0]).trigger('load');
-                    angular.element($element.find('audio')[0]).trigger('play');
-                });
-
-                $scope.$on('stopSong', function () {
-                    angular.element($element.find('audio')[0]).trigger('pause');
-                });
-            }
-        }
-
     }
 })();
 (function () {
@@ -53730,6 +53671,29 @@ angular.module('ngAnimate', [], function initAngularHelpers() {
         } else {
             vm.isBobOpen = true;
             vm.isSteveOpen = true;
+        }
+
+    }
+})();
+(function () {
+    angular.module("nighthawkApp")
+        .controller('demosController', ['$scope', '$sce', demosController])
+
+    function demosController($scope, $sce) {
+
+        var vm = this;
+
+        vm.playingSong = false;
+
+        vm.playDemo = function (song) {
+            $sce.trustAsResourceUrl(song.demoPath);
+            vm.song = song;
+            $scope.$broadcast('playSong', song);
+        }
+
+        vm.stopDemo = function () {
+            $scope.$broadcast('stopSong');
+            vm.song = null;
         }
 
     }
@@ -53772,6 +53736,11 @@ angular.module('ngAnimate', [], function initAngularHelpers() {
             vm.isHomeActive = true;
         };
 
+        vm.setDemosActive = function () {
+            vm.clearAllActive();
+            vm.isDemosActive = true;
+        };
+
         vm.setSongsActive = function () {
             vm.clearAllActive();
             vm.isSongsActive = true;
@@ -53787,6 +53756,7 @@ angular.module('ngAnimate', [], function initAngularHelpers() {
             vm.isScheduleActive = false;
             vm.isHomeActive = false;
             vm.isSongsActive = false;
+            vm.isDemosActive = false;
             vm.isPhotosActive = false;
         };
 
@@ -53811,21 +53781,77 @@ angular.module('ngAnimate', [], function initAngularHelpers() {
 })();
 (function () {
     angular.module("nighthawkApp")
-        .controller('songController', ['$scope', '$sce', songController])
+        .directive('songList', ['songFactory', songList])
 
-    function songController($scope, $sce) {
+    function songList(songFactory) {
 
-        var vm = this;
+        return {
+            restrict: 'EA',
+            scope: {
+                title: '@',
+                onDemoClick: '&',
+                restrict: '@'
+            },
+            templateUrl: 'app/directives/song-list.directive.html',
+            link: function ($scope, element, attrs) {
 
-        vm.playDemo = function (song) {
-            $sce.trustAsResourceUrl(song.demoPath);
-            vm.song = song;
-            $scope.$broadcast('playSong', song);
+                $scope.playDemo = function (index) {
+                    $scope.onDemoClick({ selectedSong: $scope.songs[index] });
+                }
+
+                songFactory.getAllSongs()
+                    .then(function (response) {
+                        if ($scope.restrict === 'demos') {
+                            $scope.songs = songFactory.onlyDemos(response.data, $scope.type).sort(songFactory.songSort);
+                        } else {
+                            $scope.songs = response.data.sort(songFactory.songSort);
+                        }
+
+                    });
+            }
         }
 
-        vm.stopDemo = function () {
-            $scope.$broadcast('stopSong');
-            vm.song = null;
+    }
+})();
+(function () {
+    angular.module("nighthawkApp")
+        .directive('songPlayer', songPlayer)
+
+    function songPlayer() {
+
+        return {
+            restrict: 'E',
+            scope: {
+            },
+            templateUrl: 'app/directives/song-player.directive.html',
+            controller: function ($scope) {
+                $scope.stopDemo = function () {
+                    $scope.$broadcast('stopSong');
+                }
+            },
+            link: function ($scope, $element, attrs) {
+                angular.element('#song-player-close').on('click', function(){
+                    angular.element($element.find('audio')[0]).trigger('pause');
+                    $scope.playingSong = false;
+                    $scope.$apply();
+                });
+
+                $scope.$on('playSong', function (event, mass) {
+                    $scope.playingSong = true;
+                    $scope.demoPath = mass.demoPath;
+                    $scope.title = mass.title;
+
+                    angular.element($element.find('audio')[0]).trigger('pause');
+                    angular.element($element.find('audio')[0]).trigger('load');
+                    angular.element($element.find('audio')[0]).trigger('play');
+
+                });
+
+                $scope.$on('stopSong', function () {
+                    angular.element($element.find('audio')[0]).trigger('pause');
+                    $scope.playingSong = false;
+                });
+            }
         }
 
     }
@@ -53903,10 +53929,16 @@ angular.module('ngAnimate', [], function initAngularHelpers() {
             })
         };
 
+        songFactory.onlyDemos = function (songs) {
+            return songs.filter(function (song) {
+                return (song.demoPath !== null && song.demoPath !== undefined);
+            })
+        };
+
         songFactory.songSort = function (a, b) {
-            if (a.artist < b.artist) {
+            if (a.title < b.title) {
                 return -1;
-            } else if (a.artist > b.artist) {
+            } else if (a.title > b.title) {
                 return 1;
             } else {
                 return 0;

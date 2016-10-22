@@ -7,8 +7,9 @@
         return {
             restrict: 'EA',
             scope: {
-                type: '@',
-                onDemoClick: '&'
+                title: '@',
+                onDemoClick: '&',
+                restrict: '@'
             },
             templateUrl: 'app/directives/song-list.directive.html',
             link: function ($scope, element, attrs) {
@@ -17,15 +18,14 @@
                     $scope.onDemoClick({ selectedSong: $scope.songs[index] });
                 }
 
-                if ($scope.type === 'cover') {
-                    $scope.title = 'Covers';
-                } else {
-                    $scope.title = 'Originals';
-                }
-
                 songFactory.getAllSongs()
                     .then(function (response) {
-                        $scope.songs = songFactory.filterByType(response.data, $scope.type).sort(songFactory.songSort);
+                        if ($scope.restrict === 'demos') {
+                            $scope.songs = songFactory.onlyDemos(response.data, $scope.type).sort(songFactory.songSort);
+                        } else {
+                            $scope.songs = response.data.sort(songFactory.songSort);
+                        }
+
                     });
             }
         }
