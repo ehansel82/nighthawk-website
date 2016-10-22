@@ -4,11 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NighthawK Acoustic Duo</title>
+    <title>NighthawK Acoustic / Electric Duo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="dist/bundle.min.css" />
-    <script src="dist/bundle.min.js"></script>
+    <meta name="description" content=".">
+    <link rel="stylesheet" type="text/css" href="source/bundle.css" />
+    <script src="source/bundle.js"></script>
 </head>
 
 <body ng-app="nighthawkApp">
@@ -29,6 +30,7 @@
                     <li ng-click="vm.setHomeActive()" ng-class="{active: vm.isHomeActive}"><a href="#/">Home</a></li>
                     <li ng-click="vm.setScheduleActive()" ng-class="{active: vm.isScheduleActive}"><a href="#schedule">Schedule</a></li>
                     <li ng-click="vm.setSongsActive()" ng-class="{active: vm.isSongsActive}"><a href="#songs">Songs</a></li>
+                    <li ng-click="vm.setPhotosActive()" ng-class="{active: vm.isPhotosActive}"><a href="#photos">Photos</a></li>
                     <li ng-click="vm.setAboutActive()" ng-class="{active: vm.isAboutActive}"><a href="#about">About</a></li>
                 </ul>
             </div>

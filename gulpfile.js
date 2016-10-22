@@ -28,6 +28,11 @@ gulp.task('copyfonts', function() {
         .pipe(gulp.dest('fonts'));
 });
 
+gulp.task('copy', ['copyjs', 
+                   'copycss',
+                   'copyfonts'] , function() {
+});
+
 gulp.task('concatjs', function() {
   return gulp.src(['source/jquery.js',
                    'source/bootstrap.js',
@@ -48,6 +53,10 @@ gulp.task('concatcss', function() {
                    'styles/site.css'])
     .pipe(concat('bundle.css'))
     .pipe(gulp.dest('source'));
+});
+
+gulp.task('concat', ['concatcss', 
+                     'concatjs'] , function() {
 });
 
 gulp.task('cleancss', function() {
@@ -77,9 +86,4 @@ gulp.task('default', ['copyjs',
                       'concatjs',
                       'concatcss',
                       'compress'] , function() {
-});
-
-gulp.task('watch', function() {
-  gulp.watch(['styles/**/*.css','app/**/*.,js'], ['concatjs',
-                                                  'concatcss']);
 });

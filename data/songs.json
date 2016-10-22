@@ -67,5 +67,660 @@
         "title": "Wagon Wheel",
         "artist": "Old Crowe Medicine Show",
         "type": "cover"
+    },
+    {
+        "title": "10 Hour day",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "A Thousand Miles From Nowhere",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "Act Naturally",
+        "artist": "Buck Owens / Beatles",
+        "type": "cover"
+    },
+    {
+        "title": "Against The Wind",
+        "artist": "Bob Seger",
+        "type": "cover"
+    },
+    {
+        "title": "All My Lovin'",
+        "artist": "Beatles",
+        "type": "cover"
+    },
+    {
+        "title": "Amy",
+        "artist": "Pure Praire League",
+        "type": "cover"
+    },
+    {
+        "title": "Amy's Back In Austin",
+        "artist": "Little Texas",
+        "type": "cover"
+    },
+    {
+        "title": "Back Home Again",
+        "artist": "John Denver",
+        "type": "cover"
+    },
+    {
+        "title": "Back In The Day",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "Bad Moon Risin",
+        "artist": "Creedence",
+        "type": "cover"
+    },
+    {
+        "title": "Barmaid",
+        "artist": "Poco",
+        "type": "cover"
+    },
+    {
+        "title": "Bartender Blue",
+        "artist": "James Taylor",
+        "type": "cover"
+    },
+    {
+        "title": "Before You Accuse Me",
+        "artist": "Credence",
+        "type": "cover"
+    },
+    {
+        "title": "Best of My Love",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "Blu",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "Blue Eyes Crying In The Rain",
+        "artist": "Willie Nelson",
+        "type": "cover"
+    },
+    {
+        "title": "Brandon James",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "Brown Eyed Girl",
+        "artist": "Van Morrison",
+        "type": "cover"
+    },
+    {
+        "title": "Bye Bye Love",
+        "artist": "Van Morrison",
+        "type": "cover"
+    },
+    {
+        "title": "California Girls",
+        "artist": "Beach Boys",
+        "type": "cover"
+    },
+    {
+        "title": "Carmel",
+        "artist": "Mike McConnell",
+        "type": "cover"
+    },
+    {
+        "title": "Cherry Bomb",
+        "artist": "John Couger",
+        "type": "cover"
+    },
+    {
+        "title": "Cinnamon Girl",
+        "artist": "Neil Young",
+        "type": "cover"
+    },
+    {
+        "title": "City of New Orleans",
+        "artist": "Arlo Guthrie",
+        "type": "cover"
+    },
+    {
+        "title": "Cold Cold Heart",
+        "artist": "Hank Williams",
+        "type": "cover"
+    },
+    {
+        "title": "Come a Time",
+        "artist": "Neil Young",
+        "type": "cover"
+    },
+    {
+        "title": "Cotton Fields",
+        "artist": "Credence",
+        "type": "cover"
+    },
+    {
+        "title": "Country Frame of Mind",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "Country Roads",
+        "artist": "John Denver",
+        "type": "cover"
+    },
+    {
+        "title": "Dance, Dance, Dance",
+        "artist": "Crazy Horse",
+        "type": "cover"
+    },
+    {
+        "title": "Dead Flowers",
+        "artist": "Stones",
+        "type": "cover"
+    },
+    {
+        "title": "Deperado",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "Do You Believe In Magic",
+        "artist": "Lovin Spoonful",
+        "type": "cover"
+    },
+    {
+        "title": "Doctor My Eye",
+        "artist": "Jackson Brown",
+        "type": "cover"
+    },
+    {
+        "title": "Doolin' Dalton",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "Dust on My Saddle",
+        "artist": "Seals & Croft",
+        "type": "cover"
+    },
+    {
+        "title": "Eight Days A Week",
+        "artist": "Beatles",
+        "type": "cover"
+    },
+    {
+        "title": "Family Tradition",
+        "artist": "Hank Jr.",
+        "type": "cover"
+    },
+    {
+        "title": "Flat Tire Merle",
+        "artist": "Pure Praire League",
+        "type": "cover"
+    },
+    {
+        "title": "Four Strong Winds",
+        "artist": "Ian Tyson",
+        "type": "cover"
+    },
+    {
+        "title": "Freebird",
+        "artist": "Skynard",
+        "type": "cover"
+    },
+    {
+        "title": "From Hank to Hendrix",
+        "artist": "Neil Young",
+        "type": "cover"
+    },
+    {
+        "title": "Fulsom Prison Blues",
+        "artist": "Johnny Cash",
+        "type": "cover"
+    },
+    {
+        "title": "Garrett County",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "Girl from Ohio",
+        "artist": "Outlaw",
+        "type": "cover"
+    },
+    {
+        "title": "Going Through Hell",
+        "artist": "Rodney Atkins",
+        "type": "cover"
+    },
+    {
+        "title": "Harvest",
+        "artist": "Neil Young",
+        "type": "cover"
+    },
+    {
+        "title": "Heard It In A Love Song",
+        "artist": "Marshall Tucker",
+        "type": "cover"
+    },
+    {
+        "title": "Heart of Gold",
+        "artist": "Neil Young",
+        "type": "cover"
+    },
+    {
+        "title": "Heartaches",
+        "artist": "Mike McConnell",
+        "type": "cover"
+    },
+    {
+        "title": "Help Me Make It",
+        "artist": "Kris Kristauferson",
+        "type": "cover"
+    },
+    {
+        "title": "Hey Jude",
+        "artist": "Beatles",
+        "type": "cover"
+    },
+    {
+        "title": "High Livin'",
+        "artist": "Mike McConnell",
+        "type": "cover"
+    },
+    {
+        "title": "Holywood Waltz",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "Homeless Streets",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "Hotel California",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "I Fought The Law",
+        "artist": "",
+        "type": "cover"
+    },
+    {
+        "title": "I Love This Bar",
+        "artist": "Toby Keith",
+        "type": "cover"
+    },
+    {
+        "title": "I Shall Be Released",
+        "artist": "Bob Dylan",
+        "type": "cover"
+    },
+    {
+        "title": "I Should Have Known Better",
+        "artist": "Beatles",
+        "type": "cover"
+    },
+    {
+        "title": "I Want To Hold Your Hand",
+        "artist": "Beatles",
+        "type": "cover"
+    },
+    {
+        "title": "I'd Love You to Want Me",
+        "artist": "Lobo",
+        "type": "cover"
+    },
+    {
+        "title": "If It Don't Work Out",
+        "artist": "Casinos",
+        "type": "cover"
+    },
+    {
+        "title": "I'm A Believer",
+        "artist": "Monkeys",
+        "type": "cover"
+    },
+    {
+        "title": "It's A Heartache",
+        "artist": "Bonnie Tyler",
+        "type": "cover"
+    },
+    {
+        "title": "Just Call Me Lonesome",
+        "artist": "Radney Foster",
+        "type": "cover"
+    },
+    {
+        "title": "Just Remember I Love You",
+        "artist": "Firefall",
+        "type": "cover"
+    },
+    {
+        "title": "Knock Three Times",
+        "artist": "Tony Orlando",
+        "type": "cover"
+    },
+    {
+        "title": "Knocking on Heaven's Door",
+        "artist": "Bob Dylan",
+        "type": "cover"
+    },
+    {
+        "title": "Knoxville Girl",
+        "artist": "Outlaws",
+        "type": "cover"
+    },
+    {
+        "title": "Lay Lady Lay",
+        "artist": "Bob Dylan",
+        "type": "cover"
+    },
+    {
+        "title": "Let it Be",
+        "artist": "Beatles",
+        "type": "cover"
+    },
+    {
+        "title": "Like a Hurricane",
+        "artist": "Neil Young",
+        "type": "cover"
+    },
+    {
+        "title": "Lodi",
+        "artist": "Credence",
+        "type": "cover"
+    },
+    {
+        "title": "Long Haired Country Boy",
+        "artist": "Charlie Daniels",
+        "type": "cover"
+    },
+    {
+        "title": "Long Lonesome Blues",
+        "artist": "Hank Williams",
+        "type": "cover"
+    },
+    {
+        "title": "Long May You Run",
+        "artist": "Neil Young",
+        "type": "cover"
+    },
+    {
+        "title": "Looking Out My Back Door",
+        "artist": "Credence",
+        "type": "cover"
+    },
+    {
+        "title": "Lotta Love",
+        "artist": "Neil Young",
+        "type": "cover"
+    },
+    {
+        "title": "Love Will Keep Us Alive",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "Love's Gonna Live Here",
+        "artist": "Buck Owens",
+        "type": "cover"
+    },
+    {
+        "title": "Luchenbach Texas",
+        "artist": "Willy & Waylon",
+        "type": "cover"
+    },
+    {
+        "title": "Main Street",
+        "artist": "Bob Seger",
+        "type": "cover"
+    },
+    {
+        "title": "Missing You",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "Mountain Music",
+        "artist": "Alabama",
+        "type": "cover"
+    },
+    {
+        "title": "My Grandpa",
+        "artist": "Steve Miller",
+        "type": "cover"
+    },
+    {
+        "title": "Nashville Cats",
+        "artist": "Lovin' Spoonful",
+        "type": "cover"
+    },
+    {
+        "title": "No Matter What",
+        "artist": "Bad Finger",
+        "type": "cover"
+    },
+    {
+        "title": "On the Road Again",
+        "artist": "Willy Nelson",
+        "type": "cover"
+    },
+    {
+        "title": "Open Arms",
+        "artist": "Bo Sloan",
+        "type": "cover"
+    },
+    {
+        "title": "Out On The Weekend",
+        "artist": "Neil Young",
+        "type": "cover"
+    },
+    {
+        "title": "Outlaw Man",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "Panama Red",
+        "artist": "New Riders",
+        "type": "cover"
+    },
+    {
+        "title": "Partytown",
+        "artist": "Glenn Frye",
+        "type": "cover"
+    },
+    {
+        "title": "Peaceful Life",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "Pretty Women",
+        "artist": "Roy Orbison",
+        "type": "cover"
+    },
+    {
+        "title": "Rambln' Man",
+        "artist": "Allman Bros",
+        "type": "cover"
+    },
+    {
+        "title": "Red Rubber Ball",
+        "artist": "?",
+        "type": "cover"
+    },
+    {
+        "title": "Rocky Top",
+        "artist": "?",
+        "type": "cover"
+    },
+    {
+        "title": "Rolling Stone",
+        "artist": "Dr. Hook",
+        "type": "cover"
+    },
+    {
+        "title": "Saturday Night",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "Saw Her Standing There",
+        "artist": "Beatles",
+        "type": "cover"
+    },
+    {
+        "title": "Set Sail",
+        "artist": "Mike McConnell",
+        "type": "cover"
+    },
+    {
+        "title": "Ship of Fools",
+        "artist": "Bob Seger",
+        "type": "cover"
+    },
+    {
+        "title": "Sister Golden Hair",
+        "artist": "America",
+        "type": "cover"
+    },
+    {
+        "title": "Still The Same",
+        "artist": "Bob Seger",
+        "type": "cover"
+    },
+    {
+        "title": "Sun Spot",
+        "artist": "Bob Seger",
+        "type": "cover"
+    },
+    {
+        "title": "Sunset on the Sage",
+        "artist": "Commander Cody",
+        "type": "cover"
+    },
+    {
+        "title": "Suspicious Minds",
+        "artist": "Elvis",
+        "type": "cover"
+    },
+    {
+        "title": "Sweet Pea",
+        "artist": "Tommy Roe",
+        "type": "cover"
+    },
+    {
+        "title": "Take It Easy",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "Take It To The Limit",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "Teach Your Children",
+        "artist": "Crosby, Still, Nash",
+        "type": "cover"
+    },
+    {
+        "title": "Tequila Sunrise",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "The Break Up Song",
+        "artist": "Greg Kin Band",
+        "type": "cover"
+    },
+    {
+        "title": "The Dream",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "The Girl From Yesterday",
+        "artist": "Eagles",
+        "type": "cover"
+    },
+    {
+        "title": "The Searching's Over",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "The Weight",
+        "artist": "The Band",
+        "type": "cover"
+    },
+    {
+        "title": "Third Rate Romance",
+        "artist": "The Amazing Rythem Aces",
+        "type": "cover"
+    },
+    {
+        "title": "Time Wont Let Mw",
+        "artist": "Outsiders",
+        "type": "cover"
+    },
+    {
+        "title": "Wagon Wheel",
+        "artist": "Old Crow Medicine Show",
+        "type": "cover"
+    },
+    {
+        "title": "Who Says You Can't Go Home",
+        "artist": "Bon Jovi",
+        "type": "cover"
+    },
+    {
+        "title": "Who'll Stop the Rain",
+        "artist": "Credence",
+        "type": "cover"
+    },
+    {
+        "title": "Wild Horses",
+        "artist": "Stones",
+        "type": "cover"
+    },
+    {
+        "title": "Wildeyed Women",
+        "artist": "McConnell",
+        "type": "cover"
+    },
+    {
+        "title": "Wonderful Tonight",
+        "artist": "Eric Clapton",
+        "type": "cover"
+    },
+    {
+        "title": "Years Gone By",
+        "artist": "Bob Hansel",
+        "type": "cover"
+    },
+    {
+        "title": "You May Be Right",
+        "artist": "Billy Joel",
+        "type": "cover"
+    },
+    {
+        "title": "Rock Me Gently",
+        "artist": "Andy Kim",
+        "type": "cover"
+    },
+    {
+        "title": "Lover Boy",
+        "artist": "Van Haylen",
+        "type": "cover"
     }
 ]

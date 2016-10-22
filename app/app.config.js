@@ -20,5 +20,8 @@
                 templateUrl: "app/views/songs.html",
                 controller: "songController as vm"
             })
+            .when("/photos", {
+                templateUrl: "app/views/photos.html"
+            })
     }
 })();

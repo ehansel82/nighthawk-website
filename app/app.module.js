@@ -1,3 +1,3 @@
 (function () {
-    angular.module("nighthawkApp", ["ngRoute", "ngAnimate"]);
+    angular.module('nighthawkApp', ['ngRoute', 'ngAnimate']);
 })();

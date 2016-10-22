@@ -104,6 +104,11 @@ section.songsContainer button.close{
     animation:0.5s slideInUp ease; 
 }
 
+section#phtos img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media (min-width: 992px) {
     .center-medium {
         text-align: center;

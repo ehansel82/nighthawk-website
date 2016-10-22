@@ -26,11 +26,17 @@
             vm.isSongsActive = true;
         };
 
+        vm.setPhotosActive = function () {
+            vm.clearAllActive();
+            vm.isPhotosActive = true;
+        };
+
         vm.clearAllActive = function () {
             vm.isAboutActive = false;
             vm.isScheduleActive = false;
             vm.isHomeActive = false;
             vm.isSongsActive = false;
+            vm.isPhotosActive = false;
         };
 
         vm.clearAllActive();
